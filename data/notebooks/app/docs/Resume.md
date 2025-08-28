@@ -3,6 +3,7 @@
 Baltimore, MD | [rohiths2@gmail.com](mailto:rohiths2@gmail.com) | 443-623-4121 | [LinkedIn](https://www.linkedin.com)
 
 ---
+https://github.com/sunkishalarohith853/UMBC-DATA606-Capstone/commit/41282ea21e0f371bdccd232b00b37f46e2cc23dc#r164770251
 
 ## Summary
 Data Analyst with a Master’s in Data Science and a Bachelors in Computer Science & Engineering, specializing in data analysis, machine learning, and big data analytics. Experienced in data pipeline development, ETL optimization, and statistical modeling, with proficiency in Python, R, SQL, and Scala. Adept at utilizing Power BI, Tableau, and Databricks to drive data-driven decision-making. Proven success in enhancing operational efficiency, optimizing SQL queries, and implementing AI-driven solutions, resulting in improved business outcomes. Strong background in financial modeling, customer journey mapping, and predictive analytics, with a track record of delivering actionable insights and process improvements.
