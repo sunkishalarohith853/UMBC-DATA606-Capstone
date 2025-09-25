@@ -1,4 +1,4 @@
-# Analyzing and Predicting Crime Hotspots and Patterns in Chicago 
+# Analyzing and Predicting Crime Hotspots and Patterns in Chicago(2019–Present)
 
 **Prepared for:** UMBC Data Science Master’s Capstone  
 **Instructor:** Dr. Chaojie (Jay) Wang  
