@@ -1,9 +1,9 @@
 # Chicago Crime Probability Prediction
 ### **Rohith Sunkishala— Fall 2025**
 
-**YouTube Presentation:** *[Insert Link]*  
-**Final PPT:** *[Insert Link]*  
-**GitHub Repository:** *[Insert Link]*  
+**YouTube Presentation:** *[]*  
+**Final PPT:** *[]*  
+**GitHub Repository:** *[]*  
 
 ---
 
