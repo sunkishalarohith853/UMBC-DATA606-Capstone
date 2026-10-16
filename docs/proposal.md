@@ -6,8 +6,7 @@
 
 - **GitHub Repository:** [UMBC-DATA606-Capstone](https://github.com/sunkishalarohith853/UMBC-DATA606-Capstone)  
 - **LinkedIn Profile:** [Rohith Sunkishala](https://www.linkedin.com/in/rohith-sunkishala-b08955333/)  
-- **PowerPoint Presentation:** *to be added later*  
-- **YouTube Demo Video:** *to be added later*  
+- **Slide deck (PDF):** [Chicago crime presentation](Chicago_Crime_Presentation(1)%20(1)%20(1).pdf)  
 
 ---
 

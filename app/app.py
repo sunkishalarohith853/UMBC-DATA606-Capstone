@@ -1,14 +1,27 @@
-import streamlit as st
-import pandas as pd
-import joblib
+import sys
+from pathlib import Path
 
-# Load the trained model
-model = joblib.load("crime_probability_model.pkl")
+import joblib
+import pandas as pd
+import streamlit as st
+
+# Load the trained model (sits next to this file; build it with
+# `python app/train_model.py` if it is missing).
+MODEL_PATH = Path(__file__).resolve().parent / "crime_probability_model.pkl"
 
 st.set_page_config(page_title="Chicago Crime Probability Predictor", layout="centered")
 
-st.title("🔮 Chicago Crime Probability Prediction App")
+st.title("Chicago Crime Probability Prediction App")
 st.write("Enter the conditions below to estimate the probability of a crime occurring.")
+
+if not MODEL_PATH.exists():
+    st.error(
+        "Model file not found. Train it first by running "
+        "`python app/train_model.py` from the repository root, then relaunch the app."
+    )
+    st.stop()
+
+model = joblib.load(MODEL_PATH)
 
 # ----------------------- USER INPUTS -----------------------
 
@@ -36,12 +49,12 @@ hour = st.slider("Hour of Day", 0, 23, 12)
 
 day_of_week = st.selectbox(
     "Day of Week",
-    ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 )
 
 month = st.selectbox("Month", list(range(1, 13)))
 
-year = st.selectbox("Year", [2019, 2020, 2021, 2022, 2023])
+year = st.selectbox("Year", [2019, 2020, 2021, 2022, 2023, 2024, 2025])
 
 # ----------------------- MODEL INPUT DF -----------------------
 
@@ -58,12 +71,17 @@ input_data = pd.DataFrame({
 
 if st.button("Predict Crime Probability"):
     proba = model.predict_proba(input_data)[0][1]  # Crime=1 probability
-    st.subheader("📌 Prediction Result")
-    st.write(f"*Estimated Crime Probability: {proba * 100:.2f}%*")
+    st.subheader("Prediction Result")
+    st.write(f"Estimated Crime Probability: {proba * 100:.2f}%")
 
     if proba >= 0.7:
-        st.error("🔴 Very High Likelihood of Crime")
+        st.error("Very High Likelihood of Crime")
     elif proba >= 0.4:
-        st.warning("🟠 Medium Likelihood of Crime")
+        st.warning("Medium Likelihood of Crime")
     else:
-        st.success("🟢 Low Likelihood of Crime")
+        st.success("Low Likelihood of Crime")
+
+st.caption(
+    "Demo model trained with synthetic negative sampling on a sample of "
+    "Chicago open crime data (2019-2025). Scores are illustrative, not safety advice."
+)
